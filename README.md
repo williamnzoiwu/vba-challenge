@@ -68,8 +68,6 @@ For Each ws In Worksheets
             ws.Cells(first_row, 9).Value = Ticker
             ws.Cells(first_row, 10).Value = year_change
             ws.Cells(first_row, 11).Value = percent_change
-            
-        
             ws.Cells(first_row, 11).NumberFormat = "0.00%"
             ws.Cells(first_row, 12).Value = stock_vol
             
@@ -201,13 +199,11 @@ For Each ws In Worksheets
     ws.Range("P2").NumberFormat = "0.00%"
     ws.Range("P3").NumberFormat = "0.00%"
 
-
     'Higlight Yearly Change column based on numerical value
     'Red if <0, green if >=0
 
     last_row_j = ws.Cells(Rows.Count, "J").End(xlUp).Row
     
-
         For j = 2 To last_row_j
             
             If ws.Cells(j, 10) > 0 Then
@@ -217,6 +213,7 @@ For Each ws In Worksheets
             Else
             
                 ws.Cells(j, 10).Interior.ColorIndex = 3
+                
             End If
             
         Next j
